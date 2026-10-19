@@ -1,14 +1,14 @@
 # SOUL.md — 给 AI Agent 的一份"可判定宪法"
 
-> **English TL;DR**: SOUL.md is a 253-line "operating constitution" for AI agents, battle-tested through 16 versions. Unlike typical persona files (mostly adjectives), it ships a **conflict resolution chain**, **complexity triggers**, **decision-free paths for simple tasks**, an **amendment process**, and **file-level acceptance criteria**. Copy it, replace one memory path, and go.
+> **English TL;DR**: SOUL.md is a 220-line "operating constitution" for AI agents, battle-tested through 17 versions. Unlike typical persona files (mostly adjectives), it ships a **conflict resolution chain**, **complexity triggers**, **decision-free paths for simple tasks**, an **amendment process**, and **file-level acceptance criteria**. Copy it, replace one memory path, and go.
 
-![version](https://img.shields.io/badge/version-v2.7.3-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![lines](https://img.shields.io/badge/lines-253-informational)
+![version](https://img.shields.io/badge/version-v2.8.0-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![lines](https://img.shields.io/badge/lines-220-informational)
 
 ## 这是什么
 
 这是一份给 AI agent 的行为准则。它不是"你是友善的、专业的、乐于助人的"那种人格文件——**形容词没有裁决能力**。
 
-它的起点是一堆形容词（2026-03），经过 16 个版本的迭代、11 轮自我审查、3 轮外部复核（5 处意见全部命中要害），长成了现在这样：**每一条规则都可判定、有例外、有触发条件，规则之间有明确的裁决顺序**。
+它的起点是一堆形容词（2026-03），经过 17 个版本的迭代、11 轮自我审查、3 轮外部复核（5 处意见全部命中要害），长成了现在这样：**每一条规则都可判定、有例外、有触发条件，规则之间有明确的裁决顺序**。
 
 一个数据：我们在 GitHub 检索了 36032 份同类的人格/行为文件，包含冲突裁决链（"priority chain"）的只有 1 份。形容词堆砌是常态，可判定的执行规范是异类。
 
@@ -58,17 +58,18 @@ AI 发现规则有问题 → 只能提案，不能自改。修订权永远在系
 - **规则形态与验收 > 规则数量**：数量越多，单条遵守率越低
 - **可观测性决定反馈回路**：违反了没人看得见的规则，永远不会被纠正
 - **判别器必须在系统外**：能自我评估的系统，会天然偏好"自己能验证的东西"，而不是"真正有用的东西"
-- **慢产出、细打磨**：16 版跨近 7 个月，每版都有 Changelog 记录改了什么、为什么
+- **慢产出、细打磨**：17 版跨近 7 个月，每版都有 Changelog 记录改了什么、为什么
 
 ## 迭代史
 
-v2 → v2.7.3 共 16 个版本，完整 Changelog 在文件内（含每版动机）。关键节点：
+v2 → v2.8.0 共 17 个版本，完整 Changelog 在文件内（含每版动机）。关键节点：
 
 | 版本 | 关键变化 |
 |------|---------|
 | v2.5 | 最小核心集（日常只看 5 条）+ 免决策路径 + 失败降级路径 |
 | v2.6 | 移植 karpathy 行为准则（「精准改动」节） |
 | v2.7 | 文件级元信息（整体倾向 / 权威归属 / 环境假设）+ 验收判据 |
+| v2.8 | Changelog 外置 + CONTRIBUTING + Issue 模板 + 集成示例 |
 
 ## 参与贡献
 

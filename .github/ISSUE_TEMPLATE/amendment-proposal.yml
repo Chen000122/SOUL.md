@@ -1,0 +1,61 @@
+name: 正文修订提案（Amendment Proposal）
+description: 提议修改 SOUL.md 正文的某条规则——请先读 CONTRIBUTING.md 的修宪程序
+title: "[Amendment] "
+labels: ["amendment"]
+body:
+  - type: dropdown
+    id: target
+    attributes:
+      label: 目标位置
+      description: 要修改 SOUL.md 的哪一部分
+      options:
+        - 最小核心集
+        - 触发器定义
+        - Core Truths
+        - Priority Chain
+        - Confidence Rule
+        - 信息源冲突
+        - Boundaries
+        - 思维协议
+        - Behavior Contract
+        - 精准改动
+        - Self-Improving
+        - 其他（请在正文中说明）
+    validations:
+      required: true
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景
+      description: 哪个场景下观察到了什么问题？（请给真实经历，不要假设性例子）
+      placeholder: "在 XX 环境执行 XX 任务时，规则 X 导致了……"
+    validations:
+      required: true
+  - type: textarea
+    id: intent
+    attributes:
+      label: 修改意图
+      description: 想改什么？为什么现有表述不够？
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收判据
+      description: 改完后怎么判定"解决了"？（可观测的信号，不是感觉）
+    validations:
+      required: true
+  - type: textarea
+    id: compat
+    attributes:
+      label: 兼容风险
+      description: 会不会与既有规则冲突？会不会影响已在运行的副本？（不确定就写"未评估"）
+  - type: checkboxes
+    id: ack
+    attributes:
+      label: 确认
+      options:
+        - label: 我已读过 SOUL.md 的 Changelog，确认此提案不与近期修订重复
+          required: true
+        - label: 我理解正文修订由维护者执行并记入 Changelog，PR 不直接改正文
+          required: true
