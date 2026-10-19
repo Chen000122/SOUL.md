@@ -1,0 +1,30 @@
+name: guard-soul
+
+# 硬约束：PR 若修改 SOUL.md 正文，PR 描述必须关联 Issue（amendment 提案）。
+# 依据：CONTRIBUTING.md「SOUL.md 正文的修改请走 Issue」——把流程约定变成 CI 检查。
+# 注：本检查只拦 PR；维护者直推 main 不受影响（branch protection 由维护者在仓库设置开启）。
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "SOUL.md"
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  require-amendment-reference:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR body references an issue
+        env:
+          BODY: ${{ github.event.pull_request.body }}
+        run: |
+          if echo "$BODY" | grep -Eq '#[0-9]+|[Aa]mendment'; then
+            echo "OK: PR body references an issue or amendment proposal."
+          else
+            echo "::error::This PR modifies SOUL.md, but its description has no issue reference (#N) or amendment note. Per CONTRIBUTING.md, SOUL.md changes must go through an Issue proposal first."
+            exit 1
+          fi
